@@ -15,7 +15,6 @@ class HomeViewController: UIViewController {
     private let cellID = "TweetTableViewCell"
     private var postData:[BodyAP] = []{
         didSet{
-            print("se cambiaran los datos")
             self.tweetsTableView.reloadData()
         }
     }
@@ -24,12 +23,16 @@ class HomeViewController: UIViewController {
     
     
     // tweetsTableView
+    override func viewDidAppear(_ animated: Bool) {
+        getPostData()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         stupUI()
-        getPostData()
+       
     }
     private func stupUI(){
         SVProgressHUD.show()

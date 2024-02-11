@@ -15,7 +15,7 @@ class NewPostViewController: UIViewController {
     @IBOutlet weak var newPostField: UITextView!
     
     @IBOutlet weak var titlePost: UITextField!
-    let homeView = HomeViewController()
+   
     
     
     override func viewDidLoad() {
@@ -61,6 +61,8 @@ class NewPostViewController: UIViewController {
                 
                 // pasar a la app
                 SVProgressHUD.dismiss()
+                // Home
+                self.navigationController?.popViewController(animated: true)
                 
                 
                 

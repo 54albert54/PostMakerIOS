@@ -26,7 +26,7 @@ class ViewController: UIViewController {
 //        data.getPost(id: 0)
     }
     private func stupUI(){
-        print("hola desde stup")
+       
         
         
     }
