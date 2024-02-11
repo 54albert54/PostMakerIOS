@@ -18,6 +18,22 @@
 		C2726D332B769F8300051626 /* makeTwetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2726D322B769F8300051626 /* makeTwetUITestsLaunchTests.swift */; };
 		C2726D422B76AA1100051626 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2726D412B76AA1100051626 /* LoginViewController.swift */; };
 		C2726D442B76AA2900051626 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2726D432B76AA2900051626 /* RegisterViewController.swift */; };
+		C2726D4A2B76B51000051626 /* NotificationBannerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C2726D492B76B51000051626 /* NotificationBannerSwift */; };
+		C2726D4D2B76BB1F00051626 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2726D4C2B76BB1F00051626 /* Home.storyboard */; };
+		C2A3215C2B76C81800AC80C4 /* ApiPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3215B2B76C81800AC80C4 /* ApiPostManager.swift */; };
+		C2A3215F2B76C88900AC80C4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C2A3215E2B76C88900AC80C4 /* Alamofire */; };
+		C2A321612B76CEA800AC80C4 /* AllPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A321602B76CEA800AC80C4 /* AllPostData.swift */; };
+		C2A321632B76CF7C00AC80C4 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A321622B76CF7C00AC80C4 /* PostData.swift */; };
+		C2A321662B76DAC800AC80C4 /* EndPoins.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A321652B76DAC800AC80C4 /* EndPoins.swift */; };
+		C2A321692B76DD5700AC80C4 /* AuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A321682B76DD5700AC80C4 /* AuthUserModel.swift */; };
+		C2A3216C2B76DDC100AC80C4 /* Simple-Networking in Frameworks */ = {isa = PBXBuildFile; productRef = C2A3216B2B76DDC100AC80C4 /* Simple-Networking */; };
+		C2A3216F2B76E0B800AC80C4 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = C2A3216E2B76E0B800AC80C4 /* SVProgressHUD */; };
+		C2A321712B76E82800AC80C4 /* NewUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A321702B76E82800AC80C4 /* NewUserRequest.swift */; };
+		C2A321742B76FB6A00AC80C4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A321732B76FB6A00AC80C4 /* HomeViewController.swift */; };
+		C2A321782B76FD5700AC80C4 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A321762B76FD5700AC80C4 /* TweetTableViewCell.swift */; };
+		C2A321792B76FD5700AC80C4 /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A321772B76FD5700AC80C4 /* TweetTableViewCell.xib */; };
+		C2A3217C2B78512A00AC80C4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C2A3217B2B78512A00AC80C4 /* Kingfisher */; };
+		C2A3217E2B7872EB00AC80C4 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3217D2B7872EB00AC80C4 /* NewPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +69,17 @@
 		C2726D322B769F8300051626 /* makeTwetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeTwetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C2726D412B76AA1100051626 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C2726D432B76AA2900051626 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C2726D4C2B76BB1F00051626 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		C2A3215B2B76C81800AC80C4 /* ApiPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPostManager.swift; sourceTree = "<group>"; };
+		C2A321602B76CEA800AC80C4 /* AllPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPostData.swift; sourceTree = "<group>"; };
+		C2A321622B76CF7C00AC80C4 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		C2A321652B76DAC800AC80C4 /* EndPoins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoins.swift; sourceTree = "<group>"; };
+		C2A321682B76DD5700AC80C4 /* AuthUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserModel.swift; sourceTree = "<group>"; };
+		C2A321702B76E82800AC80C4 /* NewUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserRequest.swift; sourceTree = "<group>"; };
+		C2A321732B76FB6A00AC80C4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C2A321762B76FD5700AC80C4 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		C2A321772B76FD5700AC80C4 /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
+		C2A3217D2B7872EB00AC80C4 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +87,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A3216F2B76E0B800AC80C4 /* SVProgressHUD in Frameworks */,
+				C2726D4A2B76B51000051626 /* NotificationBannerSwift in Frameworks */,
+				C2A3216C2B76DDC100AC80C4 /* Simple-Networking in Frameworks */,
+				C2A3215F2B76C88900AC80C4 /* Alamofire in Frameworks */,
+				C2A3217C2B78512A00AC80C4 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +135,7 @@
 		C2726D0E2B769F8100051626 /* makeTwet */ = {
 			isa = PBXGroup;
 			children = (
+				C2A321642B76DAA800AC80C4 /* Commons */,
 				C2726D0F2B769F8100051626 /* AppDelegate.swift */,
 				C2726D112B769F8100051626 /* SceneDelegate.swift */,
 				C2726D3F2B76A10100051626 /* Modules */,
@@ -133,7 +166,9 @@
 		C2726D3F2B76A10100051626 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C2726D402B76A14200051626 /* Welcomen */,
+				C2A321672B76DCF100AC80C4 /* Controler */,
+				C2A3215A2B76C7E200AC80C4 /* Model */,
+				C2A321592B76C7CA00AC80C4 /* ViewGroup */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -147,6 +182,62 @@
 				C2726D432B76AA2900051626 /* RegisterViewController.swift */,
 			);
 			path = Welcomen;
+			sourceTree = "<group>";
+		};
+		C2726D4B2B76BAFE00051626 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C2A321752B76FC8000AC80C4 /* CellViews */,
+				C2726D4C2B76BB1F00051626 /* Home.storyboard */,
+				C2A3217D2B7872EB00AC80C4 /* NewPostViewController.swift */,
+				C2A321732B76FB6A00AC80C4 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C2A321592B76C7CA00AC80C4 /* ViewGroup */ = {
+			isa = PBXGroup;
+			children = (
+				C2726D4B2B76BAFE00051626 /* Home */,
+				C2726D402B76A14200051626 /* Welcomen */,
+			);
+			path = ViewGroup;
+			sourceTree = "<group>";
+		};
+		C2A3215A2B76C7E200AC80C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2A321602B76CEA800AC80C4 /* AllPostData.swift */,
+				C2A321622B76CF7C00AC80C4 /* PostData.swift */,
+				C2A321682B76DD5700AC80C4 /* AuthUserModel.swift */,
+				C2A321702B76E82800AC80C4 /* NewUserRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C2A321642B76DAA800AC80C4 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				C2A321652B76DAC800AC80C4 /* EndPoins.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		C2A321672B76DCF100AC80C4 /* Controler */ = {
+			isa = PBXGroup;
+			children = (
+				C2A3215B2B76C81800AC80C4 /* ApiPostManager.swift */,
+			);
+			path = Controler;
+			sourceTree = "<group>";
+		};
+		C2A321752B76FC8000AC80C4 /* CellViews */ = {
+			isa = PBXGroup;
+			children = (
+				C2A321762B76FD5700AC80C4 /* TweetTableViewCell.swift */,
+				C2A321772B76FD5700AC80C4 /* TweetTableViewCell.xib */,
+			);
+			path = CellViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +256,13 @@
 			dependencies = (
 			);
 			name = makeTwet;
+			packageProductDependencies = (
+				C2726D492B76B51000051626 /* NotificationBannerSwift */,
+				C2A3215E2B76C88900AC80C4 /* Alamofire */,
+				C2A3216B2B76DDC100AC80C4 /* Simple-Networking */,
+				C2A3216E2B76E0B800AC80C4 /* SVProgressHUD */,
+				C2A3217B2B78512A00AC80C4 /* Kingfisher */,
+			);
 			productName = makeTwet;
 			productReference = C2726D0C2B769F8100051626 /* makeTwet.app */;
 			productType = "com.apple.product-type.application";
@@ -237,6 +335,13 @@
 				Base,
 			);
 			mainGroup = C2726D032B769F8100051626;
+			packageReferences = (
+				C2726D482B76B51000051626 /* XCRemoteSwiftPackageReference "NotificationBanner" */,
+				C2A3215D2B76C88900AC80C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C2A3216A2B76DDC100AC80C4 /* XCRemoteSwiftPackageReference "simple-networking" */,
+				C2A3216D2B76E0B800AC80C4 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
+				C2A3217A2B78512A00AC80C4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = C2726D0D2B769F8100051626 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -253,9 +358,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A321792B76FD5700AC80C4 /* TweetTableViewCell.xib in Resources */,
 				C2726D1C2B769F8300051626 /* LaunchScreen.storyboard in Resources */,
 				C2726D192B769F8300051626 /* Assets.xcassets in Resources */,
 				C2726D172B769F8100051626 /* Main.storyboard in Resources */,
+				C2726D4D2B76BB1F00051626 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,10 +388,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2726D422B76AA1100051626 /* LoginViewController.swift in Sources */,
+				C2A321632B76CF7C00AC80C4 /* PostData.swift in Sources */,
+				C2A321692B76DD5700AC80C4 /* AuthUserModel.swift in Sources */,
+				C2A3217E2B7872EB00AC80C4 /* NewPostViewController.swift in Sources */,
+				C2A321712B76E82800AC80C4 /* NewUserRequest.swift in Sources */,
 				C2726D442B76AA2900051626 /* RegisterViewController.swift in Sources */,
+				C2A321662B76DAC800AC80C4 /* EndPoins.swift in Sources */,
 				C2726D142B769F8100051626 /* ViewController.swift in Sources */,
+				C2A321782B76FD5700AC80C4 /* TweetTableViewCell.swift in Sources */,
 				C2726D102B769F8100051626 /* AppDelegate.swift in Sources */,
+				C2A3215C2B76C81800AC80C4 /* ApiPostManager.swift in Sources */,
 				C2726D122B769F8100051626 /* SceneDelegate.swift in Sources */,
+				C2A321612B76CEA800AC80C4 /* AllPostData.swift in Sources */,
+				C2A321742B76FB6A00AC80C4 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +749,77 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C2726D482B76B51000051626 /* XCRemoteSwiftPackageReference "NotificationBanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Daltron/NotificationBanner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.1;
+			};
+		};
+		C2A3215D2B76C88900AC80C4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		C2A3216A2B76DDC100AC80C4 /* XCRemoteSwiftPackageReference "simple-networking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mejiagarcia/simple-networking.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.9;
+			};
+		};
+		C2A3216D2B76E0B800AC80C4 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+		C2A3217A2B78512A00AC80C4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C2726D492B76B51000051626 /* NotificationBannerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2726D482B76B51000051626 /* XCRemoteSwiftPackageReference "NotificationBanner" */;
+			productName = NotificationBannerSwift;
+		};
+		C2A3215E2B76C88900AC80C4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2A3215D2B76C88900AC80C4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		C2A3216B2B76DDC100AC80C4 /* Simple-Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2A3216A2B76DDC100AC80C4 /* XCRemoteSwiftPackageReference "simple-networking" */;
+			productName = "Simple-Networking";
+		};
+		C2A3216E2B76E0B800AC80C4 /* SVProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2A3216D2B76E0B800AC80C4 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			productName = SVProgressHUD;
+		};
+		C2A3217B2B78512A00AC80C4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2A3217A2B78512A00AC80C4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C2726D042B769F8100051626 /* Project object */;
 }
