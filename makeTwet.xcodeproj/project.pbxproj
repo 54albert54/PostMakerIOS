@@ -34,6 +34,7 @@
 		C2A321792B76FD5700AC80C4 /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A321772B76FD5700AC80C4 /* TweetTableViewCell.xib */; };
 		C2A3217C2B78512A00AC80C4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C2A3217B2B78512A00AC80C4 /* Kingfisher */; };
 		C2A3217E2B7872EB00AC80C4 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3217D2B7872EB00AC80C4 /* NewPostViewController.swift */; };
+		C2A321802B7893FB00AC80C4 /* CreatePostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3217F2B7893FB00AC80C4 /* CreatePostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		C2A321762B76FD5700AC80C4 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		C2A321772B76FD5700AC80C4 /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		C2A3217D2B7872EB00AC80C4 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		C2A3217F2B7893FB00AC80C4 /* CreatePostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				C2A321622B76CF7C00AC80C4 /* PostData.swift */,
 				C2A321682B76DD5700AC80C4 /* AuthUserModel.swift */,
 				C2A321702B76E82800AC80C4 /* NewUserRequest.swift */,
+				C2A3217F2B7893FB00AC80C4 /* CreatePostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A321802B7893FB00AC80C4 /* CreatePostModel.swift in Sources */,
 				C2726D422B76AA1100051626 /* LoginViewController.swift in Sources */,
 				C2A321632B76CF7C00AC80C4 /* PostData.swift in Sources */,
 				C2A321692B76DD5700AC80C4 /* AuthUserModel.swift in Sources */,

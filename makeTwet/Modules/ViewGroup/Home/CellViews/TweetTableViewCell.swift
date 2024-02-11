@@ -30,8 +30,8 @@ class TweetTableViewCell: UITableViewCell {
     func setupCell(infoPost:BodyAP){
         self.postTitle.text = infoPost.title
         self.postUserOwner.text = infoPost.ownerUser
-        if infoPost.imagen != "NOT IMAGEN YET"{
-             let imagen = infoPost.imagen
+        if infoPost.img.count > 10{
+             let imagen = infoPost.img
              self.postImagen.kf.setImage(with: URL(string: imagen))
         
             

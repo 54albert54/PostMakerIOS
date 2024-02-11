@@ -79,7 +79,7 @@ class RegisterViewController: UIViewController {
                         
                     case .success(let data ):
                         let user: AuthUserResponse = data as AuthUserResponse
-                        SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.body.token)
+                        SimpleNetworking.setAuthenticationHeader(prefix: "Bearer", token: user.body.token)
                         // pasar a la app
                         SVProgressHUD.dismiss()
                         NotificationBanner(subtitle: "Bienvenido ",style: BannerStyle.success).show()

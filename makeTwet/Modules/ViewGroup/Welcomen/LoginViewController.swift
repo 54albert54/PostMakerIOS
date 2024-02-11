@@ -58,7 +58,7 @@ class LoginViewController: UIViewController {
             case .success(let data ):
                 let user: AuthUserResponse = data as AuthUserResponse
                 NotificationBanner(subtitle: "Bienvenido \(user.body.showData.name)",style: BannerStyle.success).show()
-                SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.body.token)
+                SimpleNetworking.setAuthenticationHeader(prefix: "Bearer", token: user.body.token)
                 // pasar a la app
                 SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "showHome", sender: nil)

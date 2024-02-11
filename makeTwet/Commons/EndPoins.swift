@@ -12,6 +12,7 @@ struct EndPoin{
   static  let authUrl = EndPoin.endPoin + "auth/login"
   static let postUrl = EndPoin.endPoin + "post/"
   static let addUserUrl = EndPoin.endPoin + "user"
+
     
 }
 

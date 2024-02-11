@@ -35,7 +35,9 @@ class HomeViewController: UIViewController {
         SVProgressHUD.show()
         tweetsTableView.dataSource = self
         tweetsTableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
+      
     }
+     
     private func getPostData(){
         
         SN.get(endpoint: EndPoin.postUrl){ (response: SNResult<AllPostData>) in

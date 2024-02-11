@@ -12,7 +12,7 @@ struct ApiPostManager{
     
    
     
-    func getAllPost(){
+   static func getAllPost(){
         
         let urlPoint = EndPoin.postUrl
         AF.request(urlPoint,method:.get,parameters: nil).responseData {(response:AFDataResponse<Data>) in
