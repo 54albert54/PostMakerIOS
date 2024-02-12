@@ -50,6 +50,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellView" destination="H2p-sc-9uM" id="QjZ-0g-oMd"/>
                 <outlet property="postImagen" destination="MdO-nb-kr9" id="daG-W9-tHM"/>
                 <outlet property="postTitle" destination="VpA-MR-tUt" id="Abj-8b-iH0"/>
                 <outlet property="postUserOwner" destination="Sn1-kD-kVu" id="rGo-ja-HKh"/>

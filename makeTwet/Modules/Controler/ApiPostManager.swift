@@ -17,14 +17,14 @@ struct ApiPostManager{
         let urlPoint = EndPoin.postUrl
         AF.request(urlPoint,method:.get,parameters: nil).responseData {(response:AFDataResponse<Data>) in
         if response.error != nil{
-            print("erro")
+        
             return
         }
             if let safeData = response.data {
             let decode = JSONDecoder()
             do{
                 let decodeData = try decode.decode(AllPostData.self, from: safeData ) as AllPostData
-                print(decodeData)
+           
             }catch{
                 print("mas error")
                 return
@@ -37,14 +37,14 @@ struct ApiPostManager{
             let urlPoint = EndPoin.postUrl + "\(id)"
             AF.request(urlPoint,method:.get,parameters: nil).responseData {(response:AFDataResponse<Data>) in
             if response.error != nil{
-                print("erro")
+                print("error")
                 return
             }
                 if let safeData = response.data {
                 let decode = JSONDecoder()
                 do{
                     let decodeData = try decode.decode(PostData.self, from: safeData ) as PostData
-                    print(decodeData)
+                
                 }catch{
                     print("mas error")
                     return

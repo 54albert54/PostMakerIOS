@@ -21,8 +21,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func LoginFast(_ sender: Any) {
-        self.userName.text = "adm"
-        self.password.text = "123456"
+        self.userName.text = "adminRM"
+        self.password.text = "12345"
         userLogin()
     }
     override func viewDidLoad() {
@@ -44,21 +44,21 @@ class LoginViewController: UIViewController {
         SVProgressHUD.show()
         
         let request = AuthUser(userName: user, password: pass)
-        
         SN.post(endpoint: EndPoin.authUrl, model: request) { (response: SNResult<AuthUserResponse>) in
             switch response {
-            case .error(let error):
+            case .error:
                 NotificationBanner(subtitle: "Error User o Password incorrectas",style: BannerStyle.danger).show()
                     SVProgressHUD.dismiss()
                     self.userName.text = ""
                     self.password.text = ""
-                
-                print(error)
               
             case .success(let data ):
                 let user: AuthUserResponse = data as AuthUserResponse
                 NotificationBanner(subtitle: "Bienvenido \(user.body.showData.name)",style: BannerStyle.success).show()
                 SimpleNetworking.setAuthenticationHeader(prefix: "Bearer", token: user.body.token)
+                //salvar los datos en local storage
+                let storage = UserAuth()
+                storage.saveDataStore(dato: user.body.showData.userName , key: .userName)
                 // pasar a la app
                 SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "showHome", sender: nil)

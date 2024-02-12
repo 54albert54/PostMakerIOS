@@ -16,21 +16,49 @@ class NewPostViewController: UIViewController {
     
     @IBOutlet weak var titlePost: UITextField!
    
-    
+    @IBOutlet weak var previwImagenView:UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        //
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     @IBAction func saveNewPost() {
         createNewPost()
-        
-      // dismiss(animated: true, completion: nil) // cerrar ventana
     }
-    func createNewPost(){
+    
+    @IBAction func abrirCamara() {
+       openCamara()
+        
+        
+        
+    }
+
+    
+    //MARK: - Properties
+   private var imagePicker: UIImagePickerController?
+    
+    private func openCamara(){
+        imagePicker = UIImagePickerController()
+        imagePicker?.sourceType = .camera
+        imagePicker?.cameraFlashMode = .off
+        imagePicker?.cameraCaptureMode = .photo
+        imagePicker?.allowsEditing = true
+        imagePicker?.delegate = self
+        
+        guard let imagePicker = imagePicker else {
+            return
+        }
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    
+    private func createNewPost(){
         guard let title = titlePost.text, !title.isEmpty else {
             NotificationBanner(title: "Error",subtitle: "Debes agregar Title",style: BannerStyle.warning).show()
             return
@@ -43,17 +71,13 @@ class NewPostViewController: UIViewController {
         let img = "-"
         let request = CreatePostModel(title: title, detail: postField , img: img)
         //CreatePostModelResponse URL:EndPoin
-        print(request)
+        
         SN.post(endpoint: EndPoin.postUrl, model: request) { (response: SNResult<CreatePostModelResponse>) in
             switch response {
-            case .error(let error):
-                print(" este es mi error \(error)")
+            case .error:
+              
                 NotificationBanner(subtitle: "Error post can't be saved ",style: BannerStyle.danger).show()
                     SVProgressHUD.dismiss()
-                    
-                
-                print(error)
-              
             case .success:
                 NotificationBanner(subtitle: "New post created",style: BannerStyle.success).show()
                 self.newPostField.text =  ""
@@ -63,19 +87,23 @@ class NewPostViewController: UIViewController {
                 SVProgressHUD.dismiss()
                 // Home
                 self.navigationController?.popViewController(animated: true)
-                
-                
-                
-                
             }
         }
-        
-        
     }
     
-   
-
-    
-    
-    
 }
+
+extension NewPostViewController :UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //pasr ala camara la camara
+        imagePicker?.dismiss(animated: true)
+        
+        if info.keys.contains(.originalImage){
+            // aparecer donde se vera el pre-view de la imagen
+            previwImagenView.isHidden = false
+            previwImagenView.image = info[.originalImage] as? UIImage
+        }
+    }
+}
+
+

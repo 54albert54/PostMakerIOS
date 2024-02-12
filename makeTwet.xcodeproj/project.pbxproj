@@ -35,6 +35,12 @@
 		C2A3217C2B78512A00AC80C4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C2A3217B2B78512A00AC80C4 /* Kingfisher */; };
 		C2A3217E2B7872EB00AC80C4 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3217D2B7872EB00AC80C4 /* NewPostViewController.swift */; };
 		C2A321802B7893FB00AC80C4 /* CreatePostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3217F2B7893FB00AC80C4 /* CreatePostModel.swift */; };
+		C2A321822B79432200AC80C4 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A321812B79432200AC80C4 /* UserAuth.swift */; };
+		C2A321842B79608C00AC80C4 /* isDev.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A321832B79608B00AC80C4 /* isDev.swift */; };
+		C2A3218A2B79ACF200AC80C4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C2A321892B79ACF200AC80C4 /* FirebaseAnalytics */; };
+		C2A3218C2B79ACF200AC80C4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C2A3218B2B79ACF200AC80C4 /* FirebaseAuth */; };
+		C2A3218E2B79ACF200AC80C4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C2A3218D2B79ACF200AC80C4 /* FirebaseDatabase */; };
+		C2A321922B79B35A00AC80C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2A321912B79B35A00AC80C4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +88,9 @@
 		C2A321772B76FD5700AC80C4 /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		C2A3217D2B7872EB00AC80C4 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		C2A3217F2B7893FB00AC80C4 /* CreatePostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostModel.swift; sourceTree = "<group>"; };
+		C2A321812B79432200AC80C4 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		C2A321832B79608B00AC80C4 /* isDev.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isDev.swift; sourceTree = "<group>"; };
+		C2A321912B79B35A00AC80C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +100,11 @@
 			files = (
 				C2A3216F2B76E0B800AC80C4 /* SVProgressHUD in Frameworks */,
 				C2726D4A2B76B51000051626 /* NotificationBannerSwift in Frameworks */,
+				C2A3218A2B79ACF200AC80C4 /* FirebaseAnalytics in Frameworks */,
 				C2A3216C2B76DDC100AC80C4 /* Simple-Networking in Frameworks */,
 				C2A3215F2B76C88900AC80C4 /* Alamofire in Frameworks */,
+				C2A3218C2B79ACF200AC80C4 /* FirebaseAuth in Frameworks */,
+				C2A3218E2B79ACF200AC80C4 /* FirebaseDatabase in Frameworks */,
 				C2A3217C2B78512A00AC80C4 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +133,7 @@
 				C2726D252B769F8300051626 /* makeTwetTests */,
 				C2726D2F2B769F8300051626 /* makeTwetUITests */,
 				C2726D0D2B769F8100051626 /* Products */,
+				C2A321882B79ACF200AC80C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +156,7 @@
 				C2726D3F2B76A10100051626 /* Modules */,
 				C2726D182B769F8300051626 /* Assets.xcassets */,
 				C2726D1A2B769F8300051626 /* LaunchScreen.storyboard */,
+				C2A321912B79B35A00AC80C4 /* GoogleService-Info.plist */,
 				C2726D1D2B769F8300051626 /* Info.plist */,
 			);
 			path = makeTwet;
@@ -214,6 +228,7 @@
 				C2A321682B76DD5700AC80C4 /* AuthUserModel.swift */,
 				C2A321702B76E82800AC80C4 /* NewUserRequest.swift */,
 				C2A3217F2B7893FB00AC80C4 /* CreatePostModel.swift */,
+				C2A321812B79432200AC80C4 /* UserAuth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A321652B76DAC800AC80C4 /* EndPoins.swift */,
+				C2A321832B79608B00AC80C4 /* isDev.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -241,6 +257,13 @@
 				C2A321772B76FD5700AC80C4 /* TweetTableViewCell.xib */,
 			);
 			path = CellViews;
+			sourceTree = "<group>";
+		};
+		C2A321882B79ACF200AC80C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +288,9 @@
 				C2A3216B2B76DDC100AC80C4 /* Simple-Networking */,
 				C2A3216E2B76E0B800AC80C4 /* SVProgressHUD */,
 				C2A3217B2B78512A00AC80C4 /* Kingfisher */,
+				C2A321892B79ACF200AC80C4 /* FirebaseAnalytics */,
+				C2A3218B2B79ACF200AC80C4 /* FirebaseAuth */,
+				C2A3218D2B79ACF200AC80C4 /* FirebaseDatabase */,
 			);
 			productName = makeTwet;
 			productReference = C2726D0C2B769F8100051626 /* makeTwet.app */;
@@ -344,6 +370,7 @@
 				C2A3216A2B76DDC100AC80C4 /* XCRemoteSwiftPackageReference "simple-networking" */,
 				C2A3216D2B76E0B800AC80C4 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 				C2A3217A2B78512A00AC80C4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				C2A321872B79AA8400AC80C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = C2726D0D2B769F8100051626 /* Products */;
 			projectDirPath = "";
@@ -366,6 +393,7 @@
 				C2726D192B769F8300051626 /* Assets.xcassets in Resources */,
 				C2726D172B769F8100051626 /* Main.storyboard in Resources */,
 				C2726D4D2B76BB1F00051626 /* Home.storyboard in Resources */,
+				C2A321922B79B35A00AC80C4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,9 +428,11 @@
 				C2A321662B76DAC800AC80C4 /* EndPoins.swift in Sources */,
 				C2726D142B769F8100051626 /* ViewController.swift in Sources */,
 				C2A321782B76FD5700AC80C4 /* TweetTableViewCell.swift in Sources */,
+				C2A321822B79432200AC80C4 /* UserAuth.swift in Sources */,
 				C2726D102B769F8100051626 /* AppDelegate.swift in Sources */,
 				C2A3215C2B76C81800AC80C4 /* ApiPostManager.swift in Sources */,
 				C2726D122B769F8100051626 /* SceneDelegate.swift in Sources */,
+				C2A321842B79608C00AC80C4 /* isDev.swift in Sources */,
 				C2A321612B76CEA800AC80C4 /* AllPostData.swift in Sources */,
 				C2A321742B76FB6A00AC80C4 /* HomeViewController.swift in Sources */,
 			);
@@ -584,11 +614,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 26NJUS4K63;
+				DEVELOPMENT_TEAM = 78BN3GFSXS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = makeTwet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PostApp;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Esta app necesita permisos de la camara";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -600,8 +633,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = prueba2.makeTwet;
+				PRODUCT_BUNDLE_IDENTIFIER = prueba.smakeTwet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -613,11 +647,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 26NJUS4K63;
+				DEVELOPMENT_TEAM = 78BN3GFSXS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = makeTwet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PostApp;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Esta app necesita permisos de la camara";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -629,8 +666,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = prueba2.makeTwet;
+				PRODUCT_BUNDLE_IDENTIFIER = prueba.smakeTwet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -795,6 +833,14 @@
 				minimumVersion = 7.10.2;
 			};
 		};
+		C2A321872B79AA8400AC80C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.21.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -822,6 +868,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C2A3217A2B78512A00AC80C4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		C2A321892B79ACF200AC80C4 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2A321872B79AA8400AC80C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		C2A3218B2B79ACF200AC80C4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2A321872B79AA8400AC80C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C2A3218D2B79ACF200AC80C4 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2A321872B79AA8400AC80C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

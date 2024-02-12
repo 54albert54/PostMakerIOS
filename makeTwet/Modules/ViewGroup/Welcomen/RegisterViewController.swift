@@ -72,11 +72,9 @@ class RegisterViewController: UIViewController {
                 
                 SN.post(endpoint: EndPoin.authUrl, model: request) { (response: SNResult<AuthUserResponse>) in
                     switch response {
-                    case .error(let error):
+                    case .error:
                         NotificationBanner(subtitle: "Error User o Password incorrectas",style: BannerStyle.danger).show()
-                        
-                        print(error)
-                        
+
                     case .success(let data ):
                         let user: AuthUserResponse = data as AuthUserResponse
                         SimpleNetworking.setAuthenticationHeader(prefix: "Bearer", token: user.body.token)
