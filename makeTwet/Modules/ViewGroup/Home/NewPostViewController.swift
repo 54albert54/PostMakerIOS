@@ -9,6 +9,7 @@ import UIKit
 import NotificationBannerSwift
 import SVProgressHUD
 import Simple_Networking
+import FirebaseStorage
 
 class NewPostViewController: UIViewController {
 
@@ -28,7 +29,7 @@ class NewPostViewController: UIViewController {
     }
     
     @IBAction func saveNewPost() {
-        createNewPost()
+        uploadPhotoFirebase()
     }
     
     @IBAction func abrirCamara() {
@@ -56,10 +57,56 @@ class NewPostViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
         
     }
+    private func uploadPhotoFirebase(){
+        //1. verificar imagen
+        guard let imageSaved = previwImagenView.image,
+        //2. Comprimir imagen y pasarla al formato jpeg
+        let imageSaveData:Data = imageSaved.jpegData(compressionQuality: 0.1) else {
+            return
+        }
+        //3. Demostrar carga
+        SVProgressHUD.show()
+        //4. Configuracion Datos Firebase
+        let metaDataConfig = StorageMetadata()
+        metaDataConfig.contentType =  "image/jpg"
+        //5. Crear referencia fireBase
+        let storage = Storage.storage()
+        //6. Crear nombre para la imagen
+        let imageName = Int.random(in: 100...1000)
+        //7. Referencia ala carpeta donde se guardara la foto
+        let folderRefence = storage.reference(withPath: "Photos-Post/\(imageName).jpg")
+        //8. subir foto a Firebase
+            // 8.1 DispatchQueue.global(qos: DispatchQoS.QoSClass.background) es para pasar la tarea para segundo planta
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
+            folderRefence.putData(imageSaveData, metadata: metaDataConfig) { (metaData: StorageMetadata?, error:Error? ) in
+                //8.2 DispatchQueue.main.async  volver los resultados al hilo principar
+                DispatchQueue.main.async {
+                    //8.3 Detener carga
+                    SVProgressHUD.dismiss()
+                    //9 manejar resultados
+                    if let error = error {
+                        NotificationBanner(title: "Error",subtitle: "Error al Guardar la foto",style: BannerStyle.warning).show()
+                        return
+                    }
+                    //9.1  obtener URL de la foto
+                    folderRefence.downloadURL{(url: URL?,error: Error?  ) in
+                        let img = url?.absoluteString ?? "no Photo "
+                        //10. salvar en la base de datos con foto
+                        self.createNewPost(imageUrl: img)
+                    }
+                    
+                }
+            }
+        }
+    }
     
     
-    private func createNewPost(){
+    
+    
+    private func createNewPost(imageUrl: String?){
+        //1. optener informacion de los campos
         guard let title = titlePost.text, !title.isEmpty else {
+            //1.1 noticicar error
             NotificationBanner(title: "Error",subtitle: "Debes agregar Title",style: BannerStyle.warning).show()
             return
         }
@@ -68,10 +115,10 @@ class NewPostViewController: UIViewController {
             return
         }
         SVProgressHUD.show()
-        let img = "-"
+        let img = imageUrl ?? "-"
         let request = CreatePostModel(title: title, detail: postField , img: img)
-        //CreatePostModelResponse URL:EndPoin
-        
+       
+        // import Simple_Networking -> packege de crear peticiones a api
         SN.post(endpoint: EndPoin.postUrl, model: request) { (response: SNResult<CreatePostModelResponse>) in
             switch response {
             case .error:
@@ -86,7 +133,7 @@ class NewPostViewController: UIViewController {
                 // pasar a la app
                 SVProgressHUD.dismiss()
                 // Home
-                self.navigationController?.popViewController(animated: true)
+                self.navigationController?.popViewController(animated: true) // -> ir ala pagina anterior
             }
         }
     }

@@ -41,6 +41,7 @@
 		C2A3218C2B79ACF200AC80C4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C2A3218B2B79ACF200AC80C4 /* FirebaseAuth */; };
 		C2A3218E2B79ACF200AC80C4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C2A3218D2B79ACF200AC80C4 /* FirebaseDatabase */; };
 		C2A321922B79B35A00AC80C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2A321912B79B35A00AC80C4 /* GoogleService-Info.plist */; };
+		C2A321942B79BA3400AC80C4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C2A321932B79BA3400AC80C4 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 			files = (
 				C2A3216F2B76E0B800AC80C4 /* SVProgressHUD in Frameworks */,
 				C2726D4A2B76B51000051626 /* NotificationBannerSwift in Frameworks */,
+				C2A321942B79BA3400AC80C4 /* FirebaseStorage in Frameworks */,
 				C2A3218A2B79ACF200AC80C4 /* FirebaseAnalytics in Frameworks */,
 				C2A3216C2B76DDC100AC80C4 /* Simple-Networking in Frameworks */,
 				C2A3215F2B76C88900AC80C4 /* Alamofire in Frameworks */,
@@ -291,6 +293,7 @@
 				C2A321892B79ACF200AC80C4 /* FirebaseAnalytics */,
 				C2A3218B2B79ACF200AC80C4 /* FirebaseAuth */,
 				C2A3218D2B79ACF200AC80C4 /* FirebaseDatabase */,
+				C2A321932B79BA3400AC80C4 /* FirebaseStorage */,
 			);
 			productName = makeTwet;
 			productReference = C2726D0C2B769F8100051626 /* makeTwet.app */;
@@ -883,6 +886,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C2A321872B79AA8400AC80C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		C2A321932B79BA3400AC80C4 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2A321872B79AA8400AC80C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -4,7 +4,10 @@
 <dict>
   
 	<key>NSCameraUsageDescription</key>
-	<string>User la camara pera tirar fotos</string>
+	<string>aceptas tirar una foto</string>
+    
+    <key>NSCMicrophoneUsageDescription</key>
+    <string>aceptas gravar con el microfono</string>
     
     
 	<key>NSAppTransportSecurity</key>
