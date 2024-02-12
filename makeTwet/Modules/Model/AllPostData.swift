@@ -17,7 +17,5 @@ struct AllPostData: Codable {
 // MARK: - Body
 struct BodyAP: Codable {
     let id: Int
-    let title, detail: String
-    let ownerUser: String
-    let img:String
+    let  title, detail , ownerUser, location ,videoUrl ,img: String
 }

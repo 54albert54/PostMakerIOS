@@ -21,17 +21,17 @@ class NewPostViewController: UIViewController {
     
     @IBOutlet weak var videoButton: UIButton!
     
-
+    
     @IBOutlet weak var newPostField: UITextView!
     
     @IBOutlet weak var titlePost: UITextField!
-   
+    
     @IBOutlet weak var previwImagenView:UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.videoButton.isHidden = true
-
+        
     }
     
     //MARK: - Close keyboard
@@ -39,17 +39,37 @@ class NewPostViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
+    var cameraFile:CameraOption = .empty
     
     @IBAction func saveNewPost() {
-       //uploadPhotoFirebase()
-        uploadVideoFirebase()
-       // self.createNewPost(imageUrl: nil, videoUrl: nil)
+        
+        switch cameraFile {
+        case .empty:
+            self.createNewPost(imageUrl: nil, videoUrl: nil)
+        case .foto:
+            self.uploadPhotoFirebase()
+        case .video:
+            self.uploadVideoFirebase()
+        }
         
     }
     
     @IBAction func abrirCamara() {
-       //openCamara()
-        openVideoCamara()
+        let alert = UIAlertController(title: "Camera", message: "Seleciona video o foto", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Foto", style: .default, handler: { _ in
+            self.openCamara()
+            self.cameraFile = .foto
+        }))
+        alert.addAction(UIAlertAction(title: "Video", style: .default, handler: { _ in
+            self.openVideoCamara()
+            self.cameraFile = .video
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
+        
+        present(alert, animated: true , completion: nil)
+        
+        
     }
     
     
@@ -73,7 +93,7 @@ class NewPostViewController: UIViewController {
     }
     
     
-
+    
     
     //MARK: - adjust camara and take Video
     private var currentVideoUrl:URL?
@@ -97,7 +117,7 @@ class NewPostViewController: UIViewController {
     }
     
     //MARK: - adjust camara and take photo
-   private var imagePicker: UIImagePickerController?
+    private var imagePicker: UIImagePickerController?
     
     private func openCamara(){
         imagePicker = UIImagePickerController()
@@ -117,8 +137,8 @@ class NewPostViewController: UIViewController {
     private func uploadPhotoFirebase(){
         //1. verificar imagen
         guard let imageSaved = previwImagenView.image,
-        //2. Comprimir imagen y pasarla al formato jpeg
-        let imageSaveData:Data = imageSaved.jpegData(compressionQuality: 0.1) else {
+              //2. Comprimir imagen y pasarla al formato jpeg
+              let imageSaveData:Data = imageSaved.jpegData(compressionQuality: 0.1) else {
             return
         }
         //3. Demostrar carga
@@ -133,7 +153,7 @@ class NewPostViewController: UIViewController {
         //7. Referencia ala carpeta donde se guardara la foto
         let folderRefence = storage.reference(withPath: "Photos-Post/\(imageName).jpg")
         //8. subir foto a Firebase
-            // 8.1 DispatchQueue.global(qos: DispatchQoS.QoSClass.background) es para pasar la tarea para segundo planta
+        // 8.1 DispatchQueue.global(qos: DispatchQoS.QoSClass.background) es para pasar la tarea para segundo planta
         DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             folderRefence.putData(imageSaveData, metadata: metaDataConfig) { (metaData: StorageMetadata?, error:Error? ) in
                 //8.2 DispatchQueue.main.async  volver los resultados al hilo principar
@@ -162,7 +182,7 @@ class NewPostViewController: UIViewController {
         guard let currentVideoSavedURL = currentVideoUrl,
               //2. Comprimir Video a Data
               let VideoData = try? Data(contentsOf: currentVideoSavedURL)
-      
+                
         else {
             return
         }
@@ -176,9 +196,9 @@ class NewPostViewController: UIViewController {
         //6. Crear nombre para la imagen
         let videoName = Int.random(in: 100...1000)
         //7. Referencia ala carpeta donde se guardara la foto
-        let folderRefence = storage.reference(withPath: "video-Post/\(videoName).mpt")
+        let folderRefence = storage.reference(withPath: "video-Post/\(videoName).mp4")
         //8. subir foto a Firebase
-            // 8.1 DispatchQueue.global(qos: DispatchQoS.QoSClass.background) es para pasar la tarea para segundo planta
+        // 8.1 DispatchQueue.global(qos: DispatchQoS.QoSClass.background) es para pasar la tarea para segundo planta
         DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             folderRefence.putData(VideoData, metadata: metaDataConfig) { (metaData: StorageMetadata?, error:Error? ) in
                 //8.2 DispatchQueue.main.async  volver los resultados al hilo principar
@@ -219,14 +239,14 @@ class NewPostViewController: UIViewController {
         let video = videoUrl ?? "-"
         let img = imageUrl ?? "-"
         let request = CreatePostModel(title: title, detail: postField , img: img ,videoUrl: video, location:"no locatio"  )
-       
+        
         // import Simple_Networking -> packege de crear peticiones a api
         SN.post(endpoint: EndPoin.postUrl, model: request) { (response: SNResult<CreatePostModelResponse>) in
             switch response {
             case .error:
-              
+                
                 NotificationBanner(subtitle: "Error post can't be saved ",style: BannerStyle.danger).show()
-                    SVProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
             case .success:
                 NotificationBanner(subtitle: "New post created",style: BannerStyle.success).show()
                 self.newPostField.text =  ""

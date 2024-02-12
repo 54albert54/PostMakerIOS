@@ -9,16 +9,14 @@ import UIKit
 import Simple_Networking
 import SVProgressHUD
 import NotificationBannerSwift
+import AVFoundation
+import AVKit
 
 class HomeViewController: UIViewController {
     
     private let cellID = "TweetTableViewCell"
-    private var postData:[BodyAP] = []{
-        didSet{
-            self.tweetsTableView.reloadData()
-        }
-    }
-
+    private var postData:[BodyAP] = []
+    
     @IBOutlet weak var tweetsTableView: UITableView!
     
     
@@ -26,44 +24,48 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getPostData()
+        self.tweetsTableView.reloadData()
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         stupUI()
-       
+        
     }
     private func stupUI(){
         SVProgressHUD.show()
         tweetsTableView.dataSource = self
         tweetsTableView.delegate = self
         tweetsTableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
-      
+        
     }
-     
+    
     private func getPostData(){
         
         SN.get(endpoint: EndPoin.postUrl){ (response: SNResult<AllPostData>) in
             switch response {
             case .error:
                 NotificationBanner(subtitle: "Error User o Password incorrectas",style: BannerStyle.danger).show()
-                    SVProgressHUD.dismiss()
-  
-            case .success(let data ):
-                let dataPost = data as AllPostData
-                self.tweetsTableView.reloadData()
-                self.postData = dataPost.body
                 SVProgressHUD.dismiss()
+                
+            case .success(let data ):
+               let dataPost = data as AllPostData
+
+               self.postData = dataPost.body
+                SVProgressHUD.dismiss()
+                self.tweetsTableView.reloadData()
+                
             }
         }
     }
     private func deletePost(indexPath: IndexPath){
         let postID = self.postData[indexPath.row].id
         let correctRow = EndPoin.postUrl + String(postID)
+        print(correctRow)
         SVProgressHUD.show()
-       
+        
         SN.delete(endpoint: correctRow) { (response: SNResult<CreatePostModelResponse>) in
             switch response {
             case .error:
@@ -72,15 +74,13 @@ class HomeViewController: UIViewController {
                 
             case .success:
                 // 1.borrar post del array de estos
-              //  self.viewDidAppear(true)
+                //  self.viewDidAppear(true)
                 NotificationBanner(subtitle: "Post Deleted successfuly ",style:
-                BannerStyle.success).show()
-                // definir tiempo para borrar elemento
-                Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false ){ timer in
-                    SVProgressHUD.dismiss()
-                    self.postData.remove(at: indexPath.row)
-                               
-                 }
+                                    BannerStyle.success).show()
+                
+                self.postData.remove(at: indexPath.row)
+                self.tweetsTableView.deleteRows(at: [indexPath], with: .left)
+                SVProgressHUD.dismiss()
             }
         }
     }
@@ -93,12 +93,13 @@ extension HomeViewController: UITableViewDelegate{
         let deleteAction = UIContextualAction(style: .destructive, title: "borrar") { (_ ,_,_ ) in
             //borrar post
             self.deletePost(indexPath: indexPath)
-
+            
         }
+        
         let editAction = UIContextualAction(style: .normal, title: "Editar") { (_ ,_,_ ) in
         }
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction,editAction])
-            return configuration
+        return configuration
     }
     //verificar que sea del mismo usuario para poder borrar
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -111,9 +112,9 @@ extension HomeViewController: UITableViewDelegate{
 }
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource{
-  
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return postData.count
     }
     
@@ -121,9 +122,28 @@ extension HomeViewController: UITableViewDataSource{
         let cell = tweetsTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         
         if let cell = cell as? TweetTableViewCell {
-
+            
             cell.setupCell(infoPost: postData[indexPath.row])
-        
+            cell.needsToShowVideo = { url in
+                //aqui se deberia de abrir el ViewController
+                let  recordedVideoUrlSaved = url
+                    
+            
+                //3.1 Create Video
+                let avPlayer = AVPlayer(url: recordedVideoUrlSaved)
+                //3.2 Controller del video
+                let avPlayerController = AVPlayerViewController()
+                
+                avPlayerController.player = avPlayer
+                
+                self.present(avPlayerController, animated: true ){
+                    //3.3 Que reprodusca video automaticamente
+                    avPlayerController.player?.play()
+                    
+                }
+                
+            }
+            
         }
         return cell
     }
