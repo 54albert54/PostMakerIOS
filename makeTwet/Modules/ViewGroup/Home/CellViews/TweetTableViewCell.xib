@@ -26,21 +26,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="user #18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn1-kD-kVu">
-                                <rect key="frame" x="0.0" y="44.666666666666671" width="66" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlamofireLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="MdO-nb-kr9">
+                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-lx-YlA">
+                                <rect key="frame" x="0.0" y="44.666666666666671" width="386" height="20.333333333333329"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="user #18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn1-kD-kVu">
+                                        <rect key="frame" x="0.0" y="0.0" width="386" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MdO-nb-kr9">
                                 <rect key="frame" x="0.0" y="70" width="386" height="154"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="386" id="O88-Wp-1Wt"/>
                                     <constraint firstAttribute="height" constant="154" id="c11-Oi-lZ6"/>
                                 </constraints>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="small"/>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xs9-lx-YlA" secondAttribute="trailing" id="5q9-Z6-f6f"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -59,7 +66,4 @@
             <point key="canvasLocation" x="-85.496183206106863" y="63.732394366197184"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="AlamofireLogo.png" width="850" height="250"/>
-    </resources>
 </document>

@@ -36,7 +36,6 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="saveNewPost" destination="GYd-Sd-bcY" eventType="touchUpInside" id="xQp-5j-lEQ"/>
                                     <segue destination="GYd-Sd-bcY" kind="show" id="6kF-h9-PY8"/>
                                 </connections>
                             </button>
@@ -108,7 +107,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="saveNewPost" destination="GYd-Sd-bcY" eventType="touchUpInside" id="dUU-Ix-19C"/>
+                                    <action selector="saveNewPost" destination="GYd-Sd-bcY" eventType="touchUpInside" id="Egg-VO-esQ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title Post" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJO-Uj-iK2">
@@ -131,6 +130,15 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Abrir Camara"/>
                                 <connections>
                                     <action selector="abrirCamara" destination="GYd-Sd-bcY" eventType="touchUpInside" id="p2u-4j-Pbc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtW-kY-ti0">
+                                <rect key="frame" x="282" y="632" width="87" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="video.fill" catalog="system" title="Play"/>
+                                <connections>
+                                    <action selector="playVideo" destination="GYd-Sd-bcY" eventType="touchUpInside" id="kkJ-mi-qoC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -157,6 +165,7 @@
                         <outlet property="newPostField" destination="aXT-vh-zed" id="FB9-r8-2f5"/>
                         <outlet property="previwImagenView" destination="nOk-rh-Q0y" id="ZVi-aP-QDa"/>
                         <outlet property="titlePost" destination="sJO-Uj-iK2" id="F9i-U0-Wa8"/>
+                        <outlet property="videoButton" destination="mtW-kY-ti0" id="pAH-ig-OBj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4i-MH-9lU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -185,6 +194,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="video.fill" catalog="system" width="128" height="81"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

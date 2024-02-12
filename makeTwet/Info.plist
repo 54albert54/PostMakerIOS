@@ -6,7 +6,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>aceptas tirar una foto</string>
     
-    <key>NSCMicrophoneUsageDescription</key>
+    <key>NSMicrophoneUsageDescription</key>
     <string>aceptas gravar con el microfono</string>
     
     

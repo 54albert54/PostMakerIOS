@@ -11,6 +11,8 @@ struct CreatePostModel :Decodable ,Encodable {
     var title:String
     var detail:String
     var img:String
+    var videoUrl:String
+    var location:String
 }
 struct CreatePostModelResponse:Decodable,Encodable  {
     var error:Bool
