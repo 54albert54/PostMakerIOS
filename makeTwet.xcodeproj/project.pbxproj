@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C238CBC72B7A6A0B00CF16E1 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238CBC62B7A6A0B00CF16E1 /* Options.swift */; };
+		C238CBC92B7AA24E00CF16E1 /* PostRequesLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238CBC82B7AA24E00CF16E1 /* PostRequesLocation.swift */; };
+		C238CBCB2B7AC15400CF16E1 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238CBCA2B7AC15300CF16E1 /* MapaViewController.swift */; };
 		C2726D102B769F8100051626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2726D0F2B769F8100051626 /* AppDelegate.swift */; };
 		C2726D122B769F8100051626 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2726D112B769F8100051626 /* SceneDelegate.swift */; };
 		C2726D142B769F8100051626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2726D132B769F8100051626 /* ViewController.swift */; };
@@ -64,6 +66,8 @@
 
 /* Begin PBXFileReference section */
 		C238CBC62B7A6A0B00CF16E1 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		C238CBC82B7AA24E00CF16E1 /* PostRequesLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequesLocation.swift; sourceTree = "<group>"; };
+		C238CBCA2B7AC15300CF16E1 /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		C2726D0C2B769F8100051626 /* makeTwet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = makeTwet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2726D0F2B769F8100051626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2726D112B769F8100051626 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				C2726D4C2B76BB1F00051626 /* Home.storyboard */,
 				C2A3217D2B7872EB00AC80C4 /* NewPostViewController.swift */,
 				C2A321732B76FB6A00AC80C4 /* HomeViewController.swift */,
+				C238CBCA2B7AC15300CF16E1 /* MapaViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				C2A321702B76E82800AC80C4 /* NewUserRequest.swift */,
 				C2A3217F2B7893FB00AC80C4 /* CreatePostModel.swift */,
 				C2A321812B79432200AC80C4 /* UserAuth.swift */,
+				C238CBC82B7AA24E00CF16E1 /* PostRequesLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,9 +443,11 @@
 				C2A321782B76FD5700AC80C4 /* TweetTableViewCell.swift in Sources */,
 				C2A321822B79432200AC80C4 /* UserAuth.swift in Sources */,
 				C2726D102B769F8100051626 /* AppDelegate.swift in Sources */,
+				C238CBC92B7AA24E00CF16E1 /* PostRequesLocation.swift in Sources */,
 				C2A3215C2B76C81800AC80C4 /* ApiPostManager.swift in Sources */,
 				C2726D122B769F8100051626 /* SceneDelegate.swift in Sources */,
 				C2A321842B79608C00AC80C4 /* isDev.swift in Sources */,
+				C238CBCB2B7AC15400CF16E1 /* MapaViewController.swift in Sources */,
 				C2A321612B76CEA800AC80C4 /* AllPostData.swift in Sources */,
 				C2A321742B76FB6A00AC80C4 /* HomeViewController.swift in Sources */,
 			);

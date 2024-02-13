@@ -15,6 +15,7 @@ import UniformTypeIdentifiers
 import AVFoundation
 import AVKit
 import MobileCoreServices
+import CoreLocation
 
 class NewPostViewController: UIViewController {
     
@@ -31,6 +32,8 @@ class NewPostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.videoButton.isHidden = true
+        
+        requesLocation()
         
     }
     
@@ -91,7 +94,23 @@ class NewPostViewController: UIViewController {
         }
         
     }
+    //MARK: - Option GPS
+    private var locationManager:CLLocationManager?
+    private var userLocation: CLLocation?
     
+    private func requesLocation(){
+        //1. verificar que el usuario dio los permisos
+        guard CLLocationManager.locationServicesEnabled() else{
+            NotificationBanner(title: "",subtitle: "We Don't  saved you location",style: BannerStyle.warning).show()
+            
+            return
+        }
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.startUpdatingLocation()
+    }
     
     
     
@@ -225,6 +244,8 @@ class NewPostViewController: UIViewController {
     
     //MARK: - Create info and post to server
     private func createNewPost(imageUrl: String? ,videoUrl:String?){
+        
+        
         //1. optener informacion de los campos
         guard let title = titlePost.text, !title.isEmpty else {
             //1.1 noticicar error
@@ -235,13 +256,24 @@ class NewPostViewController: UIViewController {
             NotificationBanner(title: "Error",subtitle: "Debes agregar Something",style: BannerStyle.warning).show()
             return
         }
+        //obtener Localicacion
+        var postLocation: PostRequesLocation?
+        if let userLocation = userLocation {
+            postLocation = PostRequesLocation(latitude: userLocation.coordinate.latitude,
+                                              longitude: userLocation.coordinate.longitude)
+        }
+        
+        
+    
+        
         SVProgressHUD.show()
         let video = videoUrl ?? "-"
         let img = imageUrl ?? "-"
-        let request = CreatePostModel(title: title, detail: postField , img: img ,videoUrl: video, location:"no locatio"  )
-        
+
+        let request = CreatePostModel(title: title, detail: postField , img: img ,videoUrl: video, latitude : postLocation!.latitude , longitude : postLocation!.longitude )
+      
         // import Simple_Networking -> packege de crear peticiones a api
-        SN.post(endpoint: EndPoin.postUrl, model: request) { (response: SNResult<CreatePostModelResponse>) in
+        SN.post(endpoint: EndPoin.postUrl, model: request   ) { (response: SNResult<CreatePostModelResponse>) in
             switch response {
             case .error:
                 
@@ -283,4 +315,18 @@ extension NewPostViewController :UIImagePickerControllerDelegate , UINavigationC
     }
 }
 
-
+// MARK: - CLLocationManagerDelegate
+extension NewPostViewController :CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let bestLocation = locations.last else {
+            
+            
+            return
+        }
+        
+        userLocation = bestLocation
+        
+        
+        //<+37.78583400,-122.40641700> +/- 5.00m (speed -1.00 mps / course -1.00) @ 2/12/24, 1:50:30 PM Eastern Standard Time
+    }
+}

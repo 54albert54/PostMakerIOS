@@ -2,13 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  
+<!-- Camara   -->
 	<key>NSCameraUsageDescription</key>
 	<string>aceptas tirar una foto</string>
     
     <key>NSMicrophoneUsageDescription</key>
     <string>aceptas gravar con el microfono</string>
     
+<!-- GPS    -->
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>Usaremos tu ubicación para el Tweet! :)</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Usaremos tu ubicación para el Tweet! :)</string>
+
+
+
+
+
+
     
     <key>NSAppTransportSecurity</key>
     <dict>

@@ -17,5 +17,11 @@ struct AllPostData: Codable {
 // MARK: - Body
 struct BodyAP: Codable {
     let id: Int
-    let  title, detail , ownerUser, location ,videoUrl ,img: String
+    let  title, detail , ownerUser ,videoUrl ,img: String
+    let longitud:String
+     let    latitud:String
+    var hasLocation:Bool {
+        self.longitud != "0.000000"
+       }
+       
 }

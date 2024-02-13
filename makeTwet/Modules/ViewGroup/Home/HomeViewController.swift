@@ -46,13 +46,13 @@ class HomeViewController: UIViewController {
         
         SN.get(endpoint: EndPoin.postUrl){ (response: SNResult<AllPostData>) in
             switch response {
-            case .error:
+            case .error(let error):
+                print(error)
                 NotificationBanner(subtitle: "Error User o Password incorrectas",style: BannerStyle.danger).show()
                 SVProgressHUD.dismiss()
                 
             case .success(let data ):
                let dataPost = data as AllPostData
-
                self.postData = dataPost.body
                 SVProgressHUD.dismiss()
                 self.tweetsTableView.reloadData()
@@ -63,7 +63,6 @@ class HomeViewController: UIViewController {
     private func deletePost(indexPath: IndexPath){
         let postID = self.postData[indexPath.row].id
         let correctRow = EndPoin.postUrl + String(postID)
-        print(correctRow)
         SVProgressHUD.show()
         
         SN.delete(endpoint: correctRow) { (response: SNResult<CreatePostModelResponse>) in
@@ -139,14 +138,24 @@ extension HomeViewController: UITableViewDataSource{
                 self.present(avPlayerController, animated: true ){
                     //3.3 Que reprodusca video automaticamente
                     avPlayerController.player?.play()
-                    
                 }
-                
             }
-            
         }
         return cell
     }
-    
+}
+
+//MARK: - Navigate
+extension HomeViewController {
+    // mandar datos de una vista a otra
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //1.verifica el identificador de la segue
+        if segue.identifier == "showMapa", let mapViewControler = segue.destination
+        //2. se castea con el controlador de la vista
+        as? MapaViewController {
+            mapViewControler.posts = postData.filter { $0.hasLocation }
+            
+        }
+    }
     
 }

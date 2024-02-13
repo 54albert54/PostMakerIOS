@@ -45,6 +45,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="584" id="dck-DD-ENB"/>
                                 </constraints>
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   List Post" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0gH-0I-9Qv">
+                                    <rect key="frame" x="0.0" y="0.0" width="365" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -61,7 +68,13 @@
                             <constraint firstItem="aPl-oe-XoD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" constant="2" id="yAX-jf-w86"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" customizationIdentifier="" id="TFv-aV-UbI"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" customizationIdentifier="" id="TFv-aV-UbI">
+                        <barButtonItem key="rightBarButtonItem" title="ver mapa" id="Agg-Bs-df8">
+                            <connections>
+                                <segue destination="UrB-eD-nif" kind="show" identifier="showMapa" id="ipo-LJ-GAd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tweetsTableView" destination="aPl-oe-XoD" id="sN1-lg-408"/>
                     </connections>
@@ -69,6 +82,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="950.38167938931292" y="-27.464788732394368"/>
+        </scene>
+        <!--Mapa-->
+        <scene sceneID="vfF-TN-ht3">
+            <objects>
+                <viewController id="UrB-eD-nif" customClass="MapaViewController" customModule="makeTwet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hSS-Yf-Nz4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mapa " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2h-bo-y5r">
+                                <rect key="frame" x="29" y="118" width="72" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdk-KN-Eq5">
+                                <rect key="frame" x="0.0" y="237" width="393" height="527"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cnv-mX-gE8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cnv-mX-gE8" firstAttribute="trailing" secondItem="Zdk-KN-Eq5" secondAttribute="trailing" id="037-iX-7XX"/>
+                            <constraint firstItem="l2h-bo-y5r" firstAttribute="leading" secondItem="cnv-mX-gE8" secondAttribute="leading" constant="29" id="6PX-A8-WqL"/>
+                            <constraint firstItem="Zdk-KN-Eq5" firstAttribute="top" secondItem="hSS-Yf-Nz4" secondAttribute="top" constant="237" id="7LQ-aD-Upc"/>
+                            <constraint firstItem="cnv-mX-gE8" firstAttribute="bottom" secondItem="Zdk-KN-Eq5" secondAttribute="bottom" constant="54" id="A3q-3n-ghc"/>
+                            <constraint firstItem="Zdk-KN-Eq5" firstAttribute="leading" secondItem="cnv-mX-gE8" secondAttribute="leading" id="EXb-94-sgT"/>
+                            <constraint firstItem="Zdk-KN-Eq5" firstAttribute="top" secondItem="l2h-bo-y5r" secondAttribute="bottom" constant="87" id="ygb-Lt-JBF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mapa" largeTitleDisplayMode="always" id="Si4-dk-eaE"/>
+                    <connections>
+                        <outlet property="mapContainer" destination="Zdk-KN-Eq5" id="r3I-Ys-gzj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AUp-hl-21t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2243.5114503816794" y="-381.69014084507046"/>
         </scene>
         <!--New Post View Controller-->
         <scene sceneID="K4k-Rc-8sZ">
@@ -170,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4i-MH-9lU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.885496183206" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="2245" y="299"/>
         </scene>
         <!--Home-->
         <scene sceneID="j20-IE-88b">
@@ -200,6 +252,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
