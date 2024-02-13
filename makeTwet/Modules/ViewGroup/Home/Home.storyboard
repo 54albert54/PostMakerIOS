@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="53W-eA-K7d">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -31,7 +31,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="CREAR POST">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.3628432104" green="0.57774242909999995" blue="0.54296801260000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.16573244619999999" green="0.65210700759999995" blue="0.14998897259999999" alpha="0.67000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -39,7 +39,7 @@
                                     <segue destination="GYd-Sd-bcY" kind="show" id="6kF-h9-PY8"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aPl-oe-XoD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aPl-oe-XoD">
                                 <rect key="frame" x="16" y="63" width="365" height="584"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -57,13 +57,13 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aPl-oe-XoD" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="0kJ-yS-60o"/>
+                            <constraint firstItem="aPl-oe-XoD" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-71" id="0kJ-yS-60o"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ToV-mm-El5" secondAttribute="trailing" id="IOq-lw-OVR"/>
-                            <constraint firstItem="aPl-oe-XoD" firstAttribute="top" secondItem="ToV-mm-El5" secondAttribute="bottom" constant="8" id="Nac-hr-TRY"/>
+                            <constraint firstItem="aPl-oe-XoD" firstAttribute="top" secondItem="ToV-mm-El5" secondAttribute="bottom" constant="-63" id="Nac-hr-TRY"/>
                             <constraint firstItem="ToV-mm-El5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Wwz-Py-XaB"/>
                             <constraint firstItem="aPl-oe-XoD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="XO6-cT-Mw1"/>
                             <constraint firstItem="ToV-mm-El5" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="63" id="dCc-mC-nBn"/>
-                            <constraint firstItem="d3b-Va-Yze" firstAttribute="top" secondItem="aPl-oe-XoD" secondAttribute="bottom" constant="8" symbolic="YES" id="fyt-hk-tlM"/>
+                            <constraint firstItem="d3b-Va-Yze" firstAttribute="top" secondItem="aPl-oe-XoD" secondAttribute="bottom" constant="79" id="fyt-hk-tlM"/>
                             <constraint firstItem="aPl-oe-XoD" firstAttribute="centerX" secondItem="d3b-Va-Yze" secondAttribute="centerX" constant="1.8333333333333712" id="tdZ-O6-PYt"/>
                             <constraint firstItem="aPl-oe-XoD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" constant="2" id="yAX-jf-w86"/>
                         </constraints>
@@ -99,7 +99,7 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdk-KN-Eq5">
                                 <rect key="frame" x="0.0" y="237" width="393" height="527"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cnv-mX-gE8"/>
@@ -154,7 +154,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Publicar">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.3628432104" green="0.57774242909999995" blue="0.54296801260000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.16573244619999999" green="0.65210700759999995" blue="0.14998897259999999" alpha="0.67000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -185,7 +185,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtW-kY-ti0">
-                                <rect key="frame" x="282" y="632" width="87" height="35"/>
+                                <rect key="frame" x="146" y="447" width="87" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="video.fill" catalog="system" title="Play"/>
@@ -252,9 +252,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

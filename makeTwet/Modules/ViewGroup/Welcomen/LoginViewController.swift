@@ -20,14 +20,20 @@ class LoginViewController: UIViewController {
         
     }
     
-    @IBAction func LoginFast(_ sender: Any) {
-        self.userName.text = "adminRM"
-        self.password.text = "12345"
-        userLogin()
-    }
+    private let storage = UserDefaults.standard
+    @IBOutlet weak var saveData: UISwitch!
+    let myStorage = UserAuth()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let userSaved = myStorage.getDataStore(.userName), let passSaved = myStorage.getDataStore(.userPassword){
+            self.userName.text = userSaved
+            self.password.text = passSaved
+            saveData.isOn = false
+        }
 
+        
         // Do any additional setup after loading the view.
     }
     // MARK: - Private Actions
@@ -40,7 +46,12 @@ class LoginViewController: UIViewController {
             NotificationBanner(title: "Error",subtitle: "Debes agregar Password",style: BannerStyle.warning).show()
             return
         }
-        //authUrl
+        
+        
+        if saveData.isOn {
+            myStorage.saveDataStore(dato: pass , key: .userPassword)
+        }
+        // MARK: -authUrl
         SVProgressHUD.show()
         
         let request = AuthUser(userName: user, password: pass)
@@ -48,17 +59,17 @@ class LoginViewController: UIViewController {
             switch response {
             case .error:
                 NotificationBanner(subtitle: "Error User o Password incorrectas",style: BannerStyle.danger).show()
-                    SVProgressHUD.dismiss()
-                    self.userName.text = ""
-                    self.password.text = ""
-              
+                SVProgressHUD.dismiss()
+                self.userName.text = ""
+                self.password.text = ""
+                
             case .success(let data ):
                 let user: AuthUserResponse = data as AuthUserResponse
                 NotificationBanner(subtitle: "Bienvenido \(user.body.showData.name)",style: BannerStyle.success).show()
                 SimpleNetworking.setAuthenticationHeader(prefix: "Bearer", token: user.body.token)
                 //salvar los datos en local storage
-                let storage = UserAuth()
-                storage.saveDataStore(dato: user.body.showData.userName , key: .userName)
+                
+                self.myStorage.saveDataStore(dato: user.body.showData.userName , key: .userName)
                 // pasar a la app
                 SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "showHome", sender: nil)
@@ -68,15 +79,15 @@ class LoginViewController: UIViewController {
             }
         }
         
-       
-
-
+        
+        
+        
         
     }
     
     
     
-
-   
-
+    
+    
+    
 }

@@ -126,7 +126,7 @@ extension HomeViewController: UITableViewDataSource{
             cell.needsToShowVideo = { url in
                 //aqui se deberia de abrir el ViewController
                 let  recordedVideoUrlSaved = url
-                    
+                
             
                 //3.1 Create Video
                 let avPlayer = AVPlayer(url: recordedVideoUrlSaved)

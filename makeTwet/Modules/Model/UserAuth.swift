@@ -7,8 +7,8 @@
 
 import Foundation
 enum KeyStore:String{
-    case userName
-    case userPassword
+    case userName , userPassword
+   
 }
 
 struct UserAuth{
@@ -20,9 +20,13 @@ struct UserAuth{
         
          storage.set(dato, forKey: key.rawValue)
     }
-    func getDataStore(_ key:KeyStore) -> String{
-        let storageUserData = storage.string(forKey: key.rawValue) ?? "no data"
+    func getDataStore(_ key:KeyStore) -> String?{
+        let storageUserData = storage.string(forKey: key.rawValue) ?? nil
        return storageUserData
    }
+    func deleteData(key : KeyStore){
+        let stringKey = key.rawValue
+        storage.removeObject(forKey: stringKey )
+    }
     
 }
